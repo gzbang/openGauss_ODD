@@ -4,8 +4,8 @@ import type { AxiosResponse } from '@/shared/axios';
 /**
  * 获取授权的相关回调链接
  */
-export function queryCourse(id: string) {
-  const url = `https://omapi.osinfra.cn/query/lts/2203?community=opengauss&user=${id}`;
+export function queryUserInfo(id: string) {
+  const url = `/query/lts/2203?community=openeuler&user=${id}`;
   return request.get(url, { global: true }).then((res: AxiosResponse) => res.data);
 }
 
