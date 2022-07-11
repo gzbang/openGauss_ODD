@@ -153,7 +153,7 @@ watch(
 
     <!-- 底部 -->
     <footer class="poster-footer" :class="{ disappear: disappear }">
-      <div class="footer-tips" :class="{ disappear: disappear }">
+      <div class="footer-tips" :class="{ disappear: disappear }" :style="{ marginBottom: `${datas.length ? '16px' : '32px'}` }">
         {{ '< <  长按识别二维码  > >' }}
       </div>
 
@@ -354,6 +354,7 @@ watch(
       width: 50%;
 
       .qrcode-img {
+        border-radius: 8px;
         position: relative;
         width: 8rem;
         height: 8rem;
