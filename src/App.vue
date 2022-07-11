@@ -163,7 +163,7 @@ watch(
           <div class="qrcode-font" :class="{ disappear: disappear }">扫码生成贡献报告</div>
         </div>
         <div class="qrcode-item">
-          <img ref="websiteIns" class="qrcode-img" src="./assets/websiteqrcode.png" alt="website" />
+          <img ref="websiteIns" class="qrcode-img" src="./assets/website-qrcode.png" alt="website" />
           <div class="qrcode-font" :class="{ disappear: disappear }">
             openGauss Developer Day <br />
             扫码报名
