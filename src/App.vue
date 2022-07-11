@@ -17,9 +17,7 @@ interface StringObj {
 
 const datas = ref([] as dataObj[]);
 const name = ref('');
-// name.value = 'pei-jiankang';
-// name.value = 'wsp1991';
-// name.value = 'lixianlin0';
+
 const i18n: StringObj = {
   prs: 'PR',
   issues: 'Issue',
@@ -108,7 +106,7 @@ watch(
 
     <!-- 标语 -->
     <div class="poster-slogan">
-      <p>openGauss开源两周年</p>
+      <p>openGauss 开源两周年</p>
       <p>秀出你的专属贡献</p>
     </div>
 
@@ -135,7 +133,7 @@ watch(
           </div>
 
           <div class="user-info-slogan">
-            <p>一起来参加openGauss Developer Day 2022吧！</p>
+            <p>一起来参与openGauss Developer Day 2022吧！</p>
             <p>我参与，我做主</p>
           </div>
         </div>
@@ -146,14 +144,14 @@ watch(
           <p>一起来参与</p>
           <p>openGauss Developer Day 2022吧，</p>
           <p>共建开源数据库根社区!</p>
-          <p :style="{ marginTop: '8%' }">我参与，我做主。</p>
+          <p :style="{ marginTop: '3.2vh' }">我参与，我做主。</p>
         </div>
       </template>
     </div>
 
     <!-- 底部 -->
     <footer class="poster-footer" :class="{ disappear: disappear }">
-      <div class="footer-tips" :class="{ disappear: disappear }" :style="{ marginBottom: `${datas.length ? '16px' : '32px'}` }">
+      <div class="footer-tips" :class="{ disappear: disappear }" :style="{ marginBottom: `${datas.length ? '0.5vh' : '3.5vh'}` }">
         {{ '< <  长按识别二维码  > >' }}
       </div>
 
@@ -198,9 +196,8 @@ watch(
     height: 100vh;
     color: #ffffff;
     text-align: center;
-    line-height: 2rem;
 
-    @media screen and (min-width: 1120px) {
+    @media screen and (min-width: 768px) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -231,16 +228,19 @@ watch(
       z-index: 3;
       width: 100%;
       padding-top: 9vh;
-      padding-left: 1.2rem;
-      padding-right: 1.2rem;
       font-weight: 500;
       user-select: none;
       color: #000000;
 
       p {
         width: 100%;
-        font-size: 2.5rem;
-        line-height: 4rem;
+        font-size: 8.3vw;
+        line-height: 11vw;
+
+        @media screen and (min-width: 768px) {
+          font-size: 4.2vh;
+          line-height: 6vh;
+        }
       }
     }
 
@@ -266,32 +266,40 @@ watch(
 
       &-empty {
         font-weight: 500;
-        font-size: 1.5rem;
-        line-height: 3rem;
+        font-size: 2vh;
+        line-height: 3.6vh;
       }
 
       .user-info {
-        padding-top: 3.2vh;
+        padding-top: 3vh;
         padding-bottom: 3vh;
         position: relative;
         width: 100%;
         height: 100%;
         font-weight: 600;
-        font-size: 1.5rem;
-        line-height: 3rem;
+        font-size: 2.5vh;
+        line-height: 3.5vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
+        &-name {
+          width: 100%;
+        }
+
+        &-detail {
+          margin-top: 2vh;
+        }
+
         .user-info-slogan {
-          font-size: 1.2rem;
-          line-height: 2rem;
+          font-size: 1.6vh;
+          line-height: 2.8vh;
           font-weight: 500;
           position: absolute;
           bottom: 0;
           width: 100%;
-          transform: translateY(calc(100% + 10px));
+          transform: translateY(calc(100% + 1vh));
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -313,7 +321,7 @@ watch(
   object-fit: cover;
   z-index: 999;
 
-  @media screen and (min-width: 1120px) {
+  @media screen and (min-width: 768px) {
     left: 50%;
     width: 50vh;
     transform: translateX(-50%);
@@ -325,7 +333,7 @@ watch(
   // background-size: cover;
   // width: 100vw;
   // height: 23vh;
-  padding-bottom: 20px;
+  padding-bottom: 2vh;
   position: relative;
   z-index: 1000;
 
@@ -334,11 +342,11 @@ watch(
   }
 
   .footer-tips {
-    font-size: 1.1rem;
+    font-size: 1vh;
     color: #ffffff;
     user-select: none;
     letter-spacing: 1px;
-    margin-bottom: 16px;
+    margin-bottom: 2vh;
     opacity: 0.8;
 
     &.disappear {
@@ -348,24 +356,24 @@ watch(
 
   .footer-qrcode {
     display: flex;
-    padding: 0 1rem;
 
     .qrcode-item {
       width: 50%;
 
       .qrcode-img {
-        border-radius: 8px;
+        border-radius: 6px;
         position: relative;
-        width: 8rem;
-        height: 8rem;
+        width: 10vh;
+        height: 10vh;
         z-index: 1000;
       }
 
       .qrcode-font {
         position: relative;
-        font-size: 12px;
-        line-height: 1.5rem;
-        margin-top: 0.5rem;
+        font-size: 1.6vh;
+        line-height: 1.8vh;
+        margin-top: 1vh;
+        text-align: center;
 
         &.disappear {
           opacity: 0;
