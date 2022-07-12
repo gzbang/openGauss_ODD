@@ -151,7 +151,7 @@ watch(
 
     <!-- 底部 -->
     <footer class="poster-footer" :class="{ disappear: disappear }">
-      <div class="footer-tips" :class="{ disappear: disappear }" :style="{ marginBottom: `${datas.length ? '1.2vh' : '3.5vh'}` }">
+      <div class="footer-tips" :class="{ disappear: disappear }" :style="{ marginBottom: `${datas.length ? '2vh' : '3.5vh'}` }">
         {{ '< <  长按识别二维码  > >' }}
       </div>
 
