@@ -27,30 +27,30 @@ const i18n: StringObj = {
 const dataLoaded = ref(false);
 
 try {
-  // getGiteeId().then((res) => {
-  name.value = 'gzbang';
-  try {
-    queryUserInfo(name.value).then((rlt) => {
-      dataLoaded.value = true;
+  getGiteeId().then((res) => {
+    name.value = res.user;
+    try {
+      queryUserInfo(name.value).then((rlt) => {
+        dataLoaded.value = true;
 
-      const data = rlt.data || [];
-      if (data.length) {
-        Object.keys(i18n).forEach((item) => {
-          const value = data[0][item];
-          if (parseInt(value) > 0) {
-            datas.value.push({
-              key: item,
-              value: data[0][item],
-              label: i18n[item],
-            });
-          }
-        });
-      }
-    });
-  } catch (err) {
-    console.error(err);
-  }
-  // });
+        const data = rlt.data || [];
+        if (data.length) {
+          Object.keys(i18n).forEach((item) => {
+            const value = data[0][item];
+            if (parseInt(value) > 0) {
+              datas.value.push({
+                key: item,
+                value: data[0][item],
+                label: i18n[item],
+              });
+            }
+          });
+        }
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  });
 } catch (e) {
   console.error(e);
 }
