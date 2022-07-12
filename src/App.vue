@@ -27,30 +27,30 @@ const i18n: StringObj = {
 const dataLoaded = ref(false);
 
 try {
-  getGiteeId().then((res) => {
-    name.value = res.user;
-    try {
-      queryUserInfo(name.value).then((rlt) => {
-        dataLoaded.value = true;
+  // getGiteeId().then((res) => {
+  name.value = 'gzbang';
+  try {
+    queryUserInfo(name.value).then((rlt) => {
+      dataLoaded.value = true;
 
-        const data = rlt.data || [];
-        if (data.length) {
-          Object.keys(i18n).forEach((item) => {
-            const value = data[0][item];
-            if (parseInt(value) > 0) {
-              datas.value.push({
-                key: item,
-                value: data[0][item],
-                label: i18n[item],
-              });
-            }
-          });
-        }
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  });
+      const data = rlt.data || [];
+      if (data.length) {
+        Object.keys(i18n).forEach((item) => {
+          const value = data[0][item];
+          if (parseInt(value) > 0) {
+            datas.value.push({
+              key: item,
+              value: data[0][item],
+              label: i18n[item],
+            });
+          }
+        });
+      }
+    });
+  } catch (err) {
+    console.error(err);
+  }
+  // });
 } catch (e) {
   console.error(e);
 }
@@ -151,7 +151,7 @@ watch(
 
     <!-- 底部 -->
     <footer class="poster-footer" :class="{ disappear: disappear }">
-      <div class="footer-tips" :class="{ disappear: disappear }" :style="{ marginBottom: `${datas.length ? '0.5vh' : '3.5vh'}` }">
+      <div class="footer-tips" :class="{ disappear: disappear }" :style="{ marginBottom: `${datas.length ? '1.2vh' : '3.5vh'}` }">
         {{ '< <  长按识别二维码  > >' }}
       </div>
 
@@ -293,13 +293,13 @@ watch(
         }
 
         .user-info-slogan {
-          font-size: 1.6vh;
+          font-size: 1.8vh;
           line-height: 2.8vh;
           font-weight: 500;
           position: absolute;
           bottom: 0;
           width: 100%;
-          transform: translateY(calc(100% + 1vh));
+          transform: translateY(calc(100% + 1.2vh));
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -342,7 +342,7 @@ watch(
   }
 
   .footer-tips {
-    font-size: 1vh;
+    font-size: 1.5vh;
     color: #ffffff;
     user-select: none;
     letter-spacing: 1px;
