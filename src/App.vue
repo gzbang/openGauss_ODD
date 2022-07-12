@@ -80,6 +80,8 @@ watch(
         html2canvas(posterIns.value as HTMLElement, {
           useCORS: true,
           allowTaint: true,
+          windowWidth: document.body.clientWidth,
+          height: document.body.clientHeight,
           // scale: 3,
         }).then((canvas) => {
           const img = new Image();
