@@ -356,9 +356,13 @@ watch(
 
   .footer-qrcode {
     display: flex;
+    width: 100vw;
 
     .qrcode-item {
       width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       .qrcode-img {
         border-radius: 6px;
