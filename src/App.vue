@@ -319,7 +319,6 @@ watch(
   width: 100vw;
   height: 100vh;
   z-index: 999;
-  object-fit: none;
 
   @media screen and (min-width: 768px) {
     left: 50%;
