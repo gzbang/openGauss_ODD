@@ -358,6 +358,10 @@ watch(
     display: flex;
     width: 100vw;
 
+    @media screen and (min-width: 768px) {
+      width: 50vh;
+    }
+
     .qrcode-item {
       width: 50%;
       display: flex;
