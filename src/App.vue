@@ -80,8 +80,6 @@ watch(
         html2canvas(posterIns.value as HTMLElement, {
           useCORS: true,
           allowTaint: true,
-          windowWidth: document.body.clientWidth,
-          height: document.body.clientHeight,
           // scale: 3,
         }).then((canvas) => {
           const img = new Image();
@@ -318,9 +316,8 @@ watch(
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
   z-index: 999;
 
   @media screen and (min-width: 768px) {
